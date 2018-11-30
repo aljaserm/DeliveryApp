@@ -1,4 +1,4 @@
-﻿// WARNING
+// WARNING
 //
 // This file has been generated automatically by Visual Studio from the outlets and
 // actions declared in your storyboard file.
@@ -11,16 +11,12 @@ using UIKit;
 
 namespace DeliveryApp.IOS
 {
-    [Register ("ViewController")]
-    partial class ViewController
+    [Register ("SignUpViewController")]
+    partial class SignUpViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnLogin { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnSignUp { get; set; }
+        UIKit.UITextField tfConfirmPassword { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -32,14 +28,9 @@ namespace DeliveryApp.IOS
 
         void ReleaseDesignerOutlets ()
         {
-            if (btnLogin != null) {
-                btnLogin.Dispose ();
-                btnLogin = null;
-            }
-
-            if (btnSignUp != null) {
-                btnSignUp.Dispose ();
-                btnSignUp = null;
+            if (tfConfirmPassword != null) {
+                tfConfirmPassword.Dispose ();
+                tfConfirmPassword = null;
             }
 
             if (tfEmail != null) {

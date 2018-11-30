@@ -124,6 +124,10 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="SignUpViewController.cs" />
+    <Compile Include="SignUpViewController.designer.cs">
+      <DependentUpon>SignUpViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewController.cs" />
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
