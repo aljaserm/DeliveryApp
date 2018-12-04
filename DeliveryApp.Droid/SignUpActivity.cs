@@ -32,8 +32,30 @@ namespace DeliveryApp.Droid
             etEmail.Text = Email;
         }
 
-        private void BtnSignUp_Click(object sender, EventArgs e)
+        private async void BtnSignUp_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(etPassword.Text))
+            {
+                if (etPassword.Text == etPasswordConfirm.Text)
+                {
+                    User user = new User()
+                    {
+                        Email = etEmail.Text,
+                        Password = etPassword.Text
+                    };
+                    await MainActivity.mobile.GetTable<User>().InsertAsync(user);
+                    Toast.MakeText(this, "User Added", ToastLength.Long).Show();
+                    return;
+                }
+                else
+                {
+                    Toast.MakeText(this, "Password Doesn't Match", ToastLength.Long).Show();
+                }
+            }
+            else
+            {
+                Toast.MakeText(this, "Password Can't be empty", ToastLength.Long).Show();
+            }
             
         }
     }

@@ -135,6 +135,7 @@
                         <outlet property="tfEmail" destination="498" id="name-outlet-498"/>
                         <outlet property="tfPassword" destination="490" id="name-outlet-490"/>
                         <outlet property="tfConfirmPassword" destination="485" id="name-outlet-485"/>
+                        <outlet property="btnSignUp" destination="521" id="name-outlet-521"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="483" userLabel="First Responder" sceneMemberID="firstResponder"/>

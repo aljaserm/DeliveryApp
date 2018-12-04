@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using Microsoft.WindowsAzure.MobileServices;
 using UIKit;
 
 namespace DeliveryApp.IOS
@@ -9,6 +10,7 @@ namespace DeliveryApp.IOS
     public class AppDelegate : UIApplicationDelegate
     {
         // class-level declarations
+        public static MobileServiceClient mobile = new MobileServiceClient("https://delvieryapplication.azurewebsites.net");
 
         public override UIWindow Window
         {
@@ -20,7 +22,7 @@ namespace DeliveryApp.IOS
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
-
+            CurrentPlatform.Init();
             return true;
         }
 
