@@ -10,8 +10,7 @@ namespace DeliveryApp.IOS
     public class AppDelegate : UIApplicationDelegate
     {
         // class-level declarations
-        public static MobileServiceClient mobile = new MobileServiceClient("https://delvieryapplication.azurewebsites.net");
-
+        
         public override UIWindow Window
         {
             get;

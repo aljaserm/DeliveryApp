@@ -166,7 +166,6 @@
     <Compile Include="SignUpViewController.designer.cs">
       <DependentUpon>SignUpViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
     <Compile Include="ViewController.cs" />
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>

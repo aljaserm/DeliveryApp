@@ -1,3 +1,4 @@
+using DeliveryApp.Model;
 using Foundation;
 using System;
 using UIKit;
@@ -20,32 +21,16 @@ namespace DeliveryApp.IOS
         private async void btnSignUp_TouchUpInside(object sender, EventArgs e)
         {
             UIAlertController alert = null;
-            if(!string.IsNullOrEmpty(tfPassword.Text))
+            var result =await User.SignUp(tfEmail.Text, tfPassword.Text, tfConfirmPassword.Text);
+            if (result)
             {
-                if (tfPassword.Text == tfConfirmPassword.Text)
-                {
-                    User user = new User()
-                    {
-                        Email = tfEmail.Text,
-                        Password = tfPassword.Text
-                    };
-                    await AppDelegate.mobile.GetTable<User>().InsertAsync(user);
-                    alert = UIAlertController.Create("Success", "User Added", UIAlertControllerStyle.Alert);
-                    alert.AddAction(UIAlertAction.Create("OK",UIAlertActionStyle.Default,null));
-                    PresentViewController(alert,true,null);
-                    return;
-                }
-                else
-                {
-                    alert= UIAlertController.Create("Wrong", "Password not match", UIAlertControllerStyle.Alert);
-                    alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
-                }
+                alert = UIAlertController.Create("Success", "User Added", UIAlertControllerStyle.Alert);
             }
             else
             {
-                alert = UIAlertController.Create("Wrong", "Password can't be empty", UIAlertControllerStyle.Alert);
-                alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+                alert = UIAlertController.Create("Wrong", "Password not match or empty", UIAlertControllerStyle.Alert);
             }
+            alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
             PresentViewController(alert, true, null);
 
         }

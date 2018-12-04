@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using DeliveryApp.Model;
 
 namespace DeliveryApp.Droid
 {
@@ -34,29 +35,15 @@ namespace DeliveryApp.Droid
 
         private async void BtnSignUp_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(etPassword.Text))
+            var result= await User.SignUp(etEmail.Text, etPassword.Text, etPasswordConfirm.Text);
+            if (result)
             {
-                if (etPassword.Text == etPasswordConfirm.Text)
-                {
-                    User user = new User()
-                    {
-                        Email = etEmail.Text,
-                        Password = etPassword.Text
-                    };
-                    await MainActivity.mobile.GetTable<User>().InsertAsync(user);
-                    Toast.MakeText(this, "User Added", ToastLength.Long).Show();
-                    return;
-                }
-                else
-                {
-                    Toast.MakeText(this, "Password Doesn't Match", ToastLength.Long).Show();
-                }
+                Toast.MakeText(this, "User Added", ToastLength.Long).Show();
             }
             else
             {
-                Toast.MakeText(this, "Password Can't be empty", ToastLength.Long).Show();
+                Toast.MakeText(this, "Password empty or Doesn't Match", ToastLength.Long).Show();
             }
-            
         }
     }
 }

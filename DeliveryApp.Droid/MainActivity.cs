@@ -6,13 +6,13 @@ using Android.Widget;
 using Android.Content;
 using Microsoft.WindowsAzure.MobileServices;
 using System.Linq;
+using DeliveryApp.Model;
 
 namespace DeliveryApp.Droid
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        public static MobileServiceClient mobile = new MobileServiceClient("https://delvieryapplication.azurewebsites.net");
         EditText etEmail,etPassword;
         Button btnSignIn,btnSignUp;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -39,22 +39,14 @@ namespace DeliveryApp.Droid
         {
             var email = etEmail.Text;
             var pass = etPassword.Text;
-            if (!string.IsNullOrEmpty(email) || !string.IsNullOrEmpty(pass))
+            var result = await User.Login(email, pass);
+            if (result)
             {
-                var user = (await mobile.GetTable<User>().Where(u => u.Email == email).ToListAsync()).FirstOrDefault();
-                if (user.Password == pass)
-                {
-                    Toast.MakeText(this, "User login", ToastLength.Long).Show();
-                }
-                else
-                {
-                    Toast.MakeText(this, "incorrect password", ToastLength.Long).Show();
-                }
-                
+                Toast.MakeText(this, "User login", ToastLength.Long).Show();
             }
             else
             {
-                Toast.MakeText(this, "Email or Password Cannot be empty", ToastLength.Long).Show();
+                Toast.MakeText(this, "incorrect email or password", ToastLength.Long).Show();
             }
         }
     }
