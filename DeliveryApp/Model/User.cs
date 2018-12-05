@@ -48,7 +48,8 @@ namespace DeliveryApp.Model
                         Email = email,
                         Password = password
                     };
-                    await AzureHelper.mobile.GetTable<User>().InsertAsync(user);
+                    //await AzureHelper.mobile.GetTable<User>().InsertAsync(user);
+                   await AzureHelper.SaveData(user);
                     result = true;
                 }
                 else
