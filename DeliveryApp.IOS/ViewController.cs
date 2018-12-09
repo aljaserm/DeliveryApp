@@ -8,6 +8,7 @@ namespace DeliveryApp.IOS
 {
     public partial class ViewController : UIViewController
     {
+        bool isLogged = false;
         public ViewController (IntPtr handle) : base (handle)
         {
         }
@@ -27,12 +28,15 @@ namespace DeliveryApp.IOS
             var result = await User.Login(email, pass);
             if (result)
             {
+                isLogged = true;
                 alert = UIAlertController.Create("Success","Welcome back",UIAlertControllerStyle.Alert);
             }
             else
             {
                 alert = UIAlertController.Create("Wrong", "Can't login, Please check your information", UIAlertControllerStyle.Alert);
             }
+
+            PerformSegue("sgeLogin",this);
             alert.AddAction(UIAlertAction.Create("ok",UIAlertActionStyle.Default,null));
             PresentViewController(alert, true, null);
 
@@ -49,6 +53,14 @@ namespace DeliveryApp.IOS
             }
         }
 
+        public override bool ShouldPerformSegue(string segueIdentifier, NSObject sender)
+        {
+            if(segueIdentifier== "sgeLogin")
+            {
+                return isLogged;
+            }
+            return true;
+        }
         public override void DidReceiveMemoryWarning ()
         {
             base.DidReceiveMemoryWarning ();

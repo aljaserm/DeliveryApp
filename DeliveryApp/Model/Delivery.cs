@@ -32,6 +32,5 @@ namespace DeliveryApp.Model
         {
            return await AzureHelper.SaveData<Delivery>(delivery);
         }
-
     }
 }
