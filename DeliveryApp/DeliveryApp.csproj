@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Bcl" Version="1.1.10" />
   </ItemGroup>
 
 </Project>
