@@ -21,17 +21,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="446" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center" placeholder="Write Password" usesAttributedText="YES">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="446" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center" placeholder="Write Password">
                                 <rect key="frame" x="20" y="353" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="">
-                                        <attributes>
-                                            <font key="NSFont" name="HelveticaNeue" size="14"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="447" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Write Email" textAlignment="center">
                                 <rect key="frame" x="20" y="304" width="374" height="30"/>
@@ -168,7 +162,7 @@
         </scene>
         <scene sceneID="1700">
             <objects>
-                <tabBarController id="1701" sceneMemberID="viewController">
+                <tabBarController id="1701" sceneMemberID="viewController" customClass="MainTabBarController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="1704">
                         <rect key="frame" x="0.0" y="686" width="414" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -179,10 +173,17 @@
                         <segue id="3272" destination="3102" kind="relationship" relationship="viewControllers"/>
                         <segue id="3427" destination="3277" kind="relationship" relationship="viewControllers"/>
                     </connections>
+                    <navigationItem id="3755" key="navigationItem">
+                        <barButtonItem key="rightBarButtonItem" id="3756" systemItem="add">
+                            <connections>
+                                <segue id="3833" destination="3751" kind="show"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1705" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-252" y="-40"/>
+            <point key="canvasLocation" x="-230" y="-38"/>
         </scene>
         <scene sceneID="2850">
             <objects>
@@ -206,7 +207,7 @@
                             <outlet property="delegate" destination="2851" id="2854"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Delivires" id="3096"/>
+                    <tabBarItem key="tabBarItem" title="Delivires" id="3096" image="deliveries.png"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2857" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,7 +236,7 @@
                             <outlet property="delegate" destination="3102" id="3105"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="delivered" id="3271"/>
+                    <tabBarItem key="tabBarItem" title="delivered" id="3271" image="delivered.png"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="Delivered" destination="3271" id="name-outlet-3271"/>
@@ -257,12 +258,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" id="3426" title="Profile"/>
+                    <tabBarItem key="tabBarItem" id="3426" title="Profile" image="profile.png"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3279" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="375" y="698"/>
         </scene>
+        <scene sceneID="3750">
+            <objects>
+                <viewController id="3751" sceneMemberID="viewController" customClass="NewDeliveryVewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3748"/>
+                        <viewControllerLayoutGuide type="bottom" id="3749"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3752">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="3841" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Package Name">
+                                <rect key="frame" x="20" y="102" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint id="3842" firstItem="3841" firstAttribute="leading" secondItem="3752" secondAttribute="leadingMargin"/>
+                            <constraint id="3843" firstItem="3841" firstAttribute="trailing" secondItem="3752" secondAttribute="trailingMargin"/>
+                            <constraint id="3844" firstItem="3749" firstAttribute="top" secondItem="3841" secondAttribute="bottom" constant="554"/>
+                        </constraints>
+                    </view>
+                    <navigationItem title="New Delivery" id="3835" key="navigationItem">
+                        <barButtonItem key="rightBarButtonItem" id="3836" systemItem="save"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bbtnSave" destination="3836" id="name-outlet-3836"/>
+                        <outlet property="tfPackageName" destination="3841" id="name-outlet-3841"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3753" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-226" y="793"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="delivered.png" width="30" height="30"/>
+        <image name="deliveries.png" width="30" height="30"/>
+        <image name="profile.png" width="30" height="30"/>
+    </resources>
 </document>
