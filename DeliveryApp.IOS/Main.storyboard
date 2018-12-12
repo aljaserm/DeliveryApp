@@ -193,13 +193,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2855">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2855" reuseIdentifier="DeliveryCell" customClass="VCDeliveryTable" rowHeight="60">
+                                <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2855" id="2856">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6210" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="20" y="0.0" width="312" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                            <constraints>
+                                                <constraint id="8961" firstAttribute="width" constant="312"/>
+                                            </constraints>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6211" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="20" y="23" width="312" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <nil key="highlightedColor"/>
+                                            <constraints>
+                                                <constraint id="8964" firstAttribute="width" constant="312"/>
+                                                <constraint id="8965" firstAttribute="height" constant="21"/>
+                                            </constraints>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7164" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES" adjustsFontForContentSizeCategory="YES">
+                                            <rect key="frame" x="323" y="0.0" width="71" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="0.16078431372549021" green="0.16470588235294117" blue="1" alpha="1"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint id="7165" firstAttribute="trailing" secondItem="7164" secondAttribute="trailing" constant="20"/>
+                                        <constraint id="7171" firstItem="7164" firstAttribute="top" secondItem="2856" secondAttribute="top" constant="8"/>
+                                        <constraint id="7172" firstAttribute="bottom" secondItem="7164" secondAttribute="bottom" constant="30"/>
+                                        <constraint id="8959" firstItem="6210" firstAttribute="top" secondItem="2856" secondAttribute="top"/>
+                                        <constraint id="8960" firstItem="6210" firstAttribute="leading" secondItem="2856" secondAttribute="leading" constant="20"/>
+                                        <constraint id="8962" firstItem="2856" firstAttribute="bottom" secondItem="6211" secondAttribute="bottom" constant="15"/>
+                                        <constraint id="8963" firstItem="6211" firstAttribute="leading" secondItem="2856" secondAttribute="leading" constant="20"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblName" destination="6210" id="name-outlet-6210"/>
+                                    <outlet property="lblStatus" destination="6211" id="name-outlet-6211"/>
+                                    <outlet property="lblCordinator" destination="7164" id="name-outlet-7164"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -222,13 +261,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3106">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3106" reuseIdentifier="DeliveredCell" rowHeight="60" customClass="VCDeliveriedTable">
+                                <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3106" id="3107">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6382" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                            <rect key="frame" x="20" y="0.0" width="314" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6383" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                            <rect key="frame" x="20" y="31" width="314" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7588" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="342" y="8" width="64" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="0.16078431372549021" green="0.16470588235294117" blue="1" alpha="1"/>
+                                            <constraints>
+                                                <constraint id="8968" firstAttribute="width" constant="64"/>
+                                                <constraint id="8969" firstAttribute="height" constant="44"/>
+                                            </constraints>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint id="6385" firstItem="6382" firstAttribute="leading" secondItem="3107" secondAttribute="leading" constant="20"/>
+                                        <constraint id="6386" firstAttribute="bottom" secondItem="6382" secondAttribute="bottom" constant="38"/>
+                                        <constraint id="6387" firstItem="6382" firstAttribute="top" secondItem="3107" secondAttribute="top"/>
+                                        <constraint id="6389" firstItem="6383" firstAttribute="leading" secondItem="3107" secondAttribute="leading" constant="20"/>
+                                        <constraint id="6390" firstAttribute="bottom" secondItem="6383" secondAttribute="bottom" constant="7"/>
+                                        <constraint id="6392" firstItem="6383" firstAttribute="top" secondItem="6382" secondAttribute="bottom" constant="10"/>
+                                        <constraint id="8966" firstItem="3107" firstAttribute="bottom" secondItem="7588" secondAttribute="bottom" constant="7"/>
+                                        <constraint id="8967" firstItem="3107" firstAttribute="trailing" secondItem="7588" secondAttribute="trailing" constant="8"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblName" destination="6382" id="name-outlet-6382"/>
+                                    <outlet property="LblStatus" destination="6383" id="name-outlet-6383"/>
+                                    <outlet property="lblCordinator" destination="7588" id="name-outlet-7588"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
