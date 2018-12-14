@@ -8,6 +8,7 @@ namespace DeliveryApp.IOS
     {
         public VCDeliveryTable (IntPtr handle) : base (handle)
         {
+
         }
     }
 }

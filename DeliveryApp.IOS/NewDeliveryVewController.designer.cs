@@ -20,6 +20,14 @@ namespace DeliveryApp.IOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        MapKit.MKMapView mvDest { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        MapKit.MKMapView mvOrgin { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField tfPackageName { get; set; }
 
         void ReleaseDesignerOutlets ()
@@ -27,6 +35,16 @@ namespace DeliveryApp.IOS
             if (bbtnSave != null) {
                 bbtnSave.Dispose ();
                 bbtnSave = null;
+            }
+
+            if (mvDest != null) {
+                mvDest.Dispose ();
+                mvDest = null;
+            }
+
+            if (mvOrgin != null) {
+                mvOrgin.Dispose ();
+                mvOrgin = null;
             }
 
             if (tfPackageName != null) {

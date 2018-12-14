@@ -12,11 +12,11 @@ using UIKit;
 namespace DeliveryApp.IOS
 {
     [Register ("VCDeliveriedTable")]
-    partial class VCDeliveriedTable
+    public partial class VCDeliveriedTable
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-       public UIKit.UILabel lblCordinator { get; set; }
+        public UIKit.UILabel lblCordinator { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]

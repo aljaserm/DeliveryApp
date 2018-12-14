@@ -12,7 +12,7 @@ using UIKit;
 namespace DeliveryApp.IOS
 {
     [Register ("VCDeliveryTable")]
-    partial class VCDeliveryTable
+    public partial class VCDeliveryTable
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]

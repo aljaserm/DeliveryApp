@@ -8,6 +8,10 @@ using Android.Gms.Maps;
 using Android.Locations;
 using Android.Gms.Maps.Model;
 using DeliveryApp.Model;
+using Android.Support.V4.Content;
+using Android.Content.PM;
+using Android;
+using Android.Support.V4.App;
 
 namespace DeliveryApp.Droid
 {
@@ -64,6 +68,24 @@ namespace DeliveryApp.Droid
             frgMap = FragmentManager.FindFragmentById<MapFragment>(Resource.Id.frgMap);
             frgMapDest = FragmentManager.FindFragmentById<MapFragment>(Resource.Id.frgMapDest);
             //frgMap.GetMapAsync(this);
+            //if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.AccessFineLocation) == Permission.Granted)
+            //{
+            //    //StartRequestingLocationUpdates();
+            //    //isRequestingLocationUpdates = true;
+            //}
+            //else
+            //{
+            //    // The app does not have permission ACCESS_FINE_LOCATION 
+            //}
+
+            if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.AccessFineLocation) != Permission.Granted)
+            {
+                ActivityCompat.RequestPermissions(this, new String[] { Manifest.Permission.AccessCoarseLocation, Manifest.Permission.AccessFineLocation }, 0);
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("Permission Granted!!!");
+            }
 
             btnSave.Click += BtnSave_Click;
         }
@@ -73,16 +95,24 @@ namespace DeliveryApp.Droid
             base.OnResume();
             locationManager = GetSystemService(Context.LocationService) as LocationManager;
             string provider = LocationManager.GpsProvider;
-            if (locationManager.IsProviderEnabled(provider))
+            if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.AccessFineLocation) == Permission.Granted)
             {
-                locationManager.RequestLocationUpdates(provider, 5000, 1, this);
-            }
+                if (locationManager.IsProviderEnabled(provider))
+                {
+                    locationManager.RequestLocationUpdates(provider, 5000, 1, this);
+                }
 
-            var location = locationManager.GetLastKnownLocation(LocationManager.NetworkProvider);
-            latitude = location.Latitude;
-            longitude = location.Longitude;
-            frgMap.GetMapAsync(this);
-            frgMapDest.GetMapAsync(this);
+                var location = locationManager.GetLastKnownLocation(LocationManager.NetworkProvider);
+                latitude = location.Latitude;
+                longitude = location.Longitude;
+                frgMap.GetMapAsync(this);
+                frgMapDest.GetMapAsync(this);
+            }
+            else
+            {
+                ActivityCompat.RequestPermissions(this, new String[] { Manifest.Permission.AccessCoarseLocation, Manifest.Permission.AccessFineLocation }, 0);
+            }
+            
         }
 
         protected override void OnPause()
