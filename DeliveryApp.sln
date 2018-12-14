@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.106
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28315.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveryApp", "DeliveryApp\DeliveryApp.csproj", "{69A10455-9A15-45A2-8554-C9B4ED38D5FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeliveryApp", "DeliveryApp\DeliveryApp.csproj", "{69A10455-9A15-45A2-8554-C9B4ED38D5FD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveryApp.IOS", "DeliveryApp.IOS\DeliveryApp.IOS.csproj", "{101E3060-8799-4119-8A7A-4F86A01C0C84}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveryApp.Droid", "DeliveryApp.Droid\DeliveryApp.Droid.csproj", "{64B9CE01-F878-4393-9643-152D5A72E757}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveryPersonApp.IOS", "DeliveryPersonApp.IOS\DeliveryPersonApp.IOS.csproj", "{567C7B8D-7D87-4975-B208-35A1A40D9A3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveryPersonApp.Droid", "DeliveryPersonApp.Droid\DeliveryPersonApp.Droid.csproj", "{B8F71108-7601-4F88-8F92-DD390DD002CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +63,34 @@ Global
 		{64B9CE01-F878-4393-9643-152D5A72E757}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{64B9CE01-F878-4393-9643-152D5A72E757}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{64B9CE01-F878-4393-9643-152D5A72E757}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{567C7B8D-7D87-4975-B208-35A1A40D9A3B}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{567C7B8D-7D87-4975-B208-35A1A40D9A3B}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{567C7B8D-7D87-4975-B208-35A1A40D9A3B}.Debug|iPhone.Build.0 = Debug|iPhone
+		{567C7B8D-7D87-4975-B208-35A1A40D9A3B}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{567C7B8D-7D87-4975-B208-35A1A40D9A3B}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{567C7B8D-7D87-4975-B208-35A1A40D9A3B}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{567C7B8D-7D87-4975-B208-35A1A40D9A3B}.Release|iPhone.ActiveCfg = Release|iPhone
+		{567C7B8D-7D87-4975-B208-35A1A40D9A3B}.Release|iPhone.Build.0 = Release|iPhone
+		{567C7B8D-7D87-4975-B208-35A1A40D9A3B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{567C7B8D-7D87-4975-B208-35A1A40D9A3B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Debug|iPhone.Deploy.0 = Debug|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Release|iPhone.Build.0 = Release|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Release|iPhone.Deploy.0 = Release|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{B8F71108-7601-4F88-8F92-DD390DD002CA}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
