@@ -18,7 +18,7 @@ namespace DeliveryApp.IOS
         public async override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            delivered = await Delivery.GetDleiveried();
+            delivered = await Delivery.GetDelivered();
             TableView.ReloadData();
         }
 

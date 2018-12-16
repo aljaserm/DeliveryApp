@@ -14,5 +14,8 @@ namespace DeliveryPersonApp.IOS
     [Register ("DeliverViewController")]
     partial class DeliverViewController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

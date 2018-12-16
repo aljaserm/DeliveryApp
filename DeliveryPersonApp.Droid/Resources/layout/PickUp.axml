@@ -3,5 +3,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <Button
+        android:text="Pick Up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnPickUp" />
+    <fragment 
+    class="com.google.android.gms.map.MapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mpfrgPickUp"
+    />
+        
 </LinearLayout>

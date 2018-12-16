@@ -12,19 +12,19 @@ using UIKit;
 namespace DeliveryApp.IOS
 {
     [Register ("VCDeliveriedTable")]
-    public partial class VCDeliveriedTable
+    partial class VCDeliveriedTable
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        public UIKit.UILabel lblCordinator { get; set; }
+        UIKit.UILabel lblCordinator { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        public UIKit.UILabel lblName { get; set; }
+        UIKit.UILabel lblName { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        public UIKit.UILabel LblStatus { get; set; }
+        UIKit.UILabel LblStatus { get; set; }
 
         void ReleaseDesignerOutlets ()
         {

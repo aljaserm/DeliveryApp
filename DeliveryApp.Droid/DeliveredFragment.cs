@@ -21,7 +21,7 @@ namespace DeliveryApp.Droid
             base.OnCreate(savedInstanceState);
 
             // Create your fragment here
-            var deliveried = await Delivery.GetDleiveried();
+            var deliveried = await Delivery.GetDelivered();
             ListAdapter = new DeliveryAdapter(Activity, deliveried);
         }
 

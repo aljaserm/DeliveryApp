@@ -19,9 +19,17 @@ namespace DeliveryApp.Model
             if (!string.IsNullOrEmpty(email) || !string.IsNullOrEmpty(password))
             {
                 var user = (await AzureHelper.mobile.GetTable<User>().Where(u => u.Email == email).ToListAsync()).FirstOrDefault();
-                if (user.Password == password)
+                if (user != null)
                 {
-                    result = true;
+                    if (user.Password == password)
+                    {
+                        result = true;
+                    }
+                    else
+                    {
+                        result = false;
+                    }
+
                 }
                 else
                 {
