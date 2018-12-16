@@ -11,5 +11,16 @@ namespace DeliveryPersonApp.IOS
         public DeliverViewController (IntPtr handle) : base (handle)
         {
         }
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            btnBarItemDelever.Clicked += BtnBarItemDelever_Clicked;
+        }
+
+        private async void BtnBarItemDelever_Clicked(object sender, EventArgs e)
+        {
+            await Delivery.DeliveredPackage(delivery);
+        }
     }
 }

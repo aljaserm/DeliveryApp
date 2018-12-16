@@ -16,6 +16,10 @@ namespace DeliveryPersonApp.IOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnSignUp { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField tfConfirmPass { get; set; }
 
         [Outlet]
@@ -28,6 +32,11 @@ namespace DeliveryPersonApp.IOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnSignUp != null) {
+                btnSignUp.Dispose ();
+                btnSignUp = null;
+            }
+
             if (tfConfirmPass != null) {
                 tfConfirmPass.Dispose ();
                 tfConfirmPass = null;

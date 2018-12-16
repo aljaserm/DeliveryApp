@@ -37,7 +37,7 @@
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="1583" destination="339" kind="show"/>
+                                    <segue id="1583" destination="339" kind="show" identifier="sgeLogin"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1039" translatesAutoresizingMaskIntoConstraints="NO">
@@ -143,11 +143,12 @@
                         <outlet property="tfEmail" destination="1060" id="name-outlet-1060"/>
                         <outlet property="tfPassword" destination="1061" id="name-outlet-1061"/>
                         <outlet property="tfConfirmPass" destination="1062" id="name-outlet-1062"/>
+                        <outlet property="btnSignUp" destination="1063" id="name-outlet-1063"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="320" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-594" y="828"/>
+            <point key="canvasLocation" x="-626" y="-873"/>
         </scene>
         <scene sceneID="338">
             <objects>
@@ -175,7 +176,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="354" style="IBUITableViewCellStyleSubtitle" textLabel="1698" detailTextLabel="1699">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="354" style="IBUITableViewCellStyleSubtitle" textLabel="1698" detailTextLabel="1699" reuseIdentifier="DeliveringCell">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="354" id="355">
@@ -223,7 +224,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="365" style="IBUITableViewCellStyleSubtitle" textLabel="1701" detailTextLabel="1702">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="365" style="IBUITableViewCellStyleSubtitle" textLabel="1701" detailTextLabel="1702" reuseIdentifier="WaitingCell">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="365" id="366">
@@ -271,7 +272,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="376" style="IBUITableViewCellStyleSubtitle" textLabel="1707" detailTextLabel="1708">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="376" style="IBUITableViewCellStyleSubtitle" textLabel="1707" detailTextLabel="1708" reuseIdentifier="DeliveredCell">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="376" id="377">
@@ -332,6 +333,12 @@
                             <constraint id="1924" firstItem="1917" firstAttribute="bottom" secondItem="381" secondAttribute="top"/>
                         </constraints>
                     </view>
+                    <navigationItem title="Deliver" id="2487" key="navigationItem">
+                        <barButtonItem key="rightBarButtonItem" id="2492" title="Deliver"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnBarItemDelever" destination="2492" id="name-outlet-2492"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="385" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -360,6 +367,12 @@
                             <constraint id="1929" firstItem="1925" firstAttribute="bottom" secondItem="388" secondAttribute="top"/>
                         </constraints>
                     </view>
+                    <navigationItem title="PickUp" id="2488" key="navigationItem">
+                        <barButtonItem key="rightBarButtonItem" title="PickUp" id="2493"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnBarItemPickUp" destination="2493" id="name-outlet-2493"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="392" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,8 +14,16 @@ namespace DeliveryPersonApp.IOS
     [Register ("DeliverViewController")]
     partial class DeliverViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem btnBarItemDelever { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (btnBarItemDelever != null) {
+                btnBarItemDelever.Dispose ();
+                btnBarItemDelever = null;
+            }
         }
     }
 }

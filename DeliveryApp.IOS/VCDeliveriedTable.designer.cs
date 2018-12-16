@@ -16,15 +16,15 @@ namespace DeliveryApp.IOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblCordinator { get; set; }
+        public UIKit.UILabel lblCordinator { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblName { get; set; }
+        public UIKit.UILabel lblName { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel LblStatus { get; set; }
+        public UIKit.UILabel LblStatus { get; set; }
 
         void ReleaseDesignerOutlets ()
         {

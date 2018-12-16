@@ -14,8 +14,16 @@ namespace DeliveryPersonApp.IOS
     [Register ("PickUpViewController")]
     partial class PickUpViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem btnBarItemPickUp { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (btnBarItemPickUp != null) {
+                btnBarItemPickUp.Dispose ();
+                btnBarItemPickUp = null;
+            }
         }
     }
 }
