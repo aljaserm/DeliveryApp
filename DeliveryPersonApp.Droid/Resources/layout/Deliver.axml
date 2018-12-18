@@ -9,9 +9,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnDeliver" />
         <fragment 
-    class="com.google.android.gms.map.MapFragment"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+        class="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
     android:id="@+id/mpfrgDeliver"
     />
 </LinearLayout>

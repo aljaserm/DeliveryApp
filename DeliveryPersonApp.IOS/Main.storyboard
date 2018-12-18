@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1039" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="329" y="435" width="50" height="30"/>
+                                <rect key="frame" x="288" y="435" width="91" height="30"/>
                                 <state key="normal" title="SignUp">
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.1803921568627451" green="0.66666666666666663" blue="0.83921568627450982" alpha="1"/>
                                 </state>
@@ -63,10 +63,13 @@
                             <constraint id="1053" firstItem="1039" firstAttribute="top" secondItem="1036" secondAttribute="bottom" constant="16"/>
                             <constraint id="1054" firstAttribute="trailingMargin" secondItem="1036" secondAttribute="trailing" constant="15"/>
                             <constraint id="1055" firstItem="1036" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16"/>
-                            <constraint id="1056" firstItem="1039" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="309"/>
                             <constraint id="1057" firstAttribute="trailingMargin" secondItem="1039" secondAttribute="trailing" constant="15"/>
                             <constraint id="1058" firstItem="wfy-db-euE" firstAttribute="top" secondItem="1039" secondAttribute="bottom" constant="271"/>
                             <constraint id="1059" firstItem="1039" firstAttribute="top" secondItem="1036" secondAttribute="bottom" constant="16"/>
+                            <constraint id="3653" firstItem="1034" firstAttribute="width" secondItem="1035" secondAttribute="width"/>
+                            <constraint id="3654" firstItem="1034" firstAttribute="height" secondItem="1035" secondAttribute="height"/>
+                            <constraint id="8572" firstItem="1039" firstAttribute="top" secondItem="1036" secondAttribute="bottom" constant="16"/>
+                            <constraint id="8575" firstItem="1039" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="268"/>
                         </constraints>
                     </view>
                     <navigationItem title="Title" id="312" key="navigationItem"/>
@@ -209,7 +212,7 @@
                             <outlet property="delegate" destination="350" id="353"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="475"/>
+                    <tabBarItem key="tabBarItem" title="Deliver" id="475"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="356" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -257,7 +260,7 @@
                             <outlet property="delegate" destination="361" id="364"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="563"/>
+                    <tabBarItem key="tabBarItem" title="Waiting" id="563"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="367" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -302,7 +305,7 @@
                             <outlet property="delegate" destination="372" id="375"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="739"/>
+                    <tabBarItem key="tabBarItem" title="Delivered" id="739"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="378" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -324,6 +327,12 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="1917" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="0.0" y="72" width="414" height="614"/>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="8880" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="644" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Get Dirictions" id="8881"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <constraints>
                             <constraint id="1920" firstAttribute="leadingMargin" secondItem="1917" secondAttribute="leading" constant="20"/>
@@ -331,6 +340,11 @@
                             <constraint id="1922" firstItem="1917" firstAttribute="bottom" secondItem="381" secondAttribute="top"/>
                             <constraint id="1923" firstItem="1917" firstAttribute="top" secondItem="380" secondAttribute="bottom" constant="2"/>
                             <constraint id="1924" firstItem="1917" firstAttribute="bottom" secondItem="381" secondAttribute="top"/>
+                            <constraint id="8884" firstAttribute="leadingMargin" secondItem="8880" secondAttribute="leading" constant="20"/>
+                            <constraint id="8885" firstItem="8880" firstAttribute="top" secondItem="1917" secondAttribute="top" constant="572"/>
+                            <constraint id="8887" firstItem="8880" firstAttribute="bottom" secondItem="1917" secondAttribute="bottom" constant="2"/>
+                            <constraint id="9827" firstItem="8880" firstAttribute="trailing" secondItem="384" secondAttribute="trailingMargin" constant="20"/>
+                            <constraint id="9828" firstItem="8880" firstAttribute="width" secondItem="384" secondAttribute="width"/>
                         </constraints>
                     </view>
                     <navigationItem title="Deliver" id="2487" key="navigationItem">
@@ -338,6 +352,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnBarItemDelever" destination="2492" id="name-outlet-2492"/>
+                        <outlet property="mvDeliver" destination="1917" id="name-outlet-1917"/>
+                        <outlet property="btnBarItemDirctition" destination="8881" id="name-outlet-8881"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="385" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -359,12 +375,22 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="1925" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="0.0" y="70" width="414" height="616"/>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="8882" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="642" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Get Dirictions" id="8883"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <constraints>
                             <constraint id="1926" firstItem="1925" firstAttribute="top" secondItem="387" secondAttribute="bottom"/>
                             <constraint id="1927" firstAttribute="leadingMargin" secondItem="1925" secondAttribute="leading" constant="20"/>
                             <constraint id="1928" firstItem="1925" firstAttribute="trailing" secondItem="391" secondAttribute="trailingMargin" constant="20"/>
                             <constraint id="1929" firstItem="1925" firstAttribute="bottom" secondItem="388" secondAttribute="top"/>
+                            <constraint id="8888" firstItem="8882" firstAttribute="top" secondItem="1925" secondAttribute="top" constant="572"/>
+                            <constraint id="8889" firstAttribute="leadingMargin" secondItem="8882" secondAttribute="leading" constant="20"/>
+                            <constraint id="8890" firstItem="8882" firstAttribute="bottom" secondItem="1925" secondAttribute="bottom"/>
+                            <constraint id="9826" firstItem="8882" firstAttribute="trailing" secondItem="391" secondAttribute="trailingMargin" constant="20"/>
                         </constraints>
                     </view>
                     <navigationItem title="PickUp" id="2488" key="navigationItem">
@@ -372,6 +398,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnBarItemPickUp" destination="2493" id="name-outlet-2493"/>
+                        <outlet property="mvPickUp" destination="1925" id="name-outlet-1925"/>
+                        <outlet property="btnBarItemDirctition" destination="8883" id="name-outlet-8883"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="392" userLabel="First Responder" sceneMemberID="firstResponder"/>

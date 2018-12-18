@@ -26,17 +26,18 @@ namespace DeliveryPersonApp.IOS
         private async void BtnLogin_TouchUpInside(object sender, EventArgs e)
         {
             UIAlertController alert = null;
-            var UserId= await DeliveryPerson.Login(tfEmail.Text, tfPassword.Text);
+            UserId= await DeliveryPerson.Login(tfEmail.Text, tfPassword.Text);
             if (!string.IsNullOrEmpty(UserId))
             {
                 isLogged = true;
                 alert = UIAlertController.Create("Success", "Welcome back", UIAlertControllerStyle.Alert);
+                PerformSegue("sgeLogin", this);
             }
             else
             {
                 alert = UIAlertController.Create("Wrong", "Can't login, Please check your information", UIAlertControllerStyle.Alert);
             }
-            PerformSegue("sgeLogin", this);
+            //PerformSegue("sgeLogin", this);
             alert.AddAction(UIAlertAction.Create("ok", UIAlertActionStyle.Default, null));
             PresentViewController(alert, true, null);
         }

@@ -16,13 +16,31 @@ namespace DeliveryPersonApp.IOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIBarButtonItem btnBarItemDirctition { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIBarButtonItem btnBarItemPickUp { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        MapKit.MKMapView mvPickUp { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnBarItemDirctition != null) {
+                btnBarItemDirctition.Dispose ();
+                btnBarItemDirctition = null;
+            }
+
             if (btnBarItemPickUp != null) {
                 btnBarItemPickUp.Dispose ();
                 btnBarItemPickUp = null;
+            }
+
+            if (mvPickUp != null) {
+                mvPickUp.Dispose ();
+                mvPickUp = null;
             }
         }
     }
