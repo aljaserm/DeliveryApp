@@ -47,7 +47,22 @@ namespace DeliveryPersonApp.IOS
         }
         private async void BtnBarItemPickUp_Clicked(object sender, EventArgs e)
         {
-           await Delivery.PickedUpPackage(delivery,UserId);
+            var haptic = new UINotificationFeedbackGenerator();
+            haptic.Prepare();
+           bool status=await Delivery.PickedUpPackage(delivery,UserId);
+            UIAlertController alert = null;
+            if (status)
+            {
+                haptic.NotificationOccurred(UINotificationFeedbackType.Success);
+                alert = UIAlertController.Create("Sucess","Your package is picked up and on it way. Enjoy!",UIAlertControllerStyle.Alert);
+            }
+            else
+            {
+                haptic.NotificationOccurred(UINotificationFeedbackType.Error);
+                alert = UIAlertController.Create("failed", "Try Again!", UIAlertControllerStyle.Alert);
+            }
+            alert.AddAction(UIAlertAction.Create("ok",UIAlertActionStyle.Default,null));
+            PresentViewController(alert, true, null);
         }
     }
 }

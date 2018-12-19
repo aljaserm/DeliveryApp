@@ -57,19 +57,19 @@
                             <constraint id="1047" firstItem="1034" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="201"/>
                             <constraint id="1048" firstAttribute="trailingMargin" secondItem="1035" secondAttribute="trailing" constant="15"/>
                             <constraint id="1049" firstItem="1035" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16"/>
-                            <constraint id="1050" firstItem="1036" firstAttribute="top" secondItem="1035" secondAttribute="bottom" constant="39"/>
                             <constraint id="1051" firstItem="1035" firstAttribute="top" secondItem="1034" secondAttribute="bottom" constant="19"/>
-                            <constraint id="1052" firstItem="1036" firstAttribute="top" secondItem="1035" secondAttribute="bottom" constant="39"/>
                             <constraint id="1053" firstItem="1039" firstAttribute="top" secondItem="1036" secondAttribute="bottom" constant="16"/>
                             <constraint id="1054" firstAttribute="trailingMargin" secondItem="1036" secondAttribute="trailing" constant="15"/>
-                            <constraint id="1055" firstItem="1036" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16"/>
                             <constraint id="1057" firstAttribute="trailingMargin" secondItem="1039" secondAttribute="trailing" constant="15"/>
                             <constraint id="1058" firstItem="wfy-db-euE" firstAttribute="top" secondItem="1039" secondAttribute="bottom" constant="271"/>
-                            <constraint id="1059" firstItem="1039" firstAttribute="top" secondItem="1036" secondAttribute="bottom" constant="16"/>
-                            <constraint id="3653" firstItem="1034" firstAttribute="width" secondItem="1035" secondAttribute="width"/>
                             <constraint id="3654" firstItem="1034" firstAttribute="height" secondItem="1035" secondAttribute="height"/>
-                            <constraint id="8572" firstItem="1039" firstAttribute="top" secondItem="1036" secondAttribute="bottom" constant="16"/>
                             <constraint id="8575" firstItem="1039" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="268"/>
+                            <constraint id="10187" firstItem="1039" firstAttribute="top" secondItem="1036" secondAttribute="bottom" constant="16"/>
+                            <constraint id="10189" firstItem="1036" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16"/>
+                            <constraint id="10190" firstAttribute="trailingMargin" secondItem="1036" secondAttribute="trailing" constant="15"/>
+                            <constraint id="10191" firstItem="1036" firstAttribute="top" secondItem="1035" secondAttribute="bottom" constant="39"/>
+                            <constraint id="10192" firstItem="1036" firstAttribute="width" secondItem="1035" secondAttribute="width"/>
+                            <constraint id="10193" firstItem="1036" firstAttribute="height" secondItem="1035" secondAttribute="height"/>
                         </constraints>
                     </view>
                     <navigationItem title="Title" id="312" key="navigationItem"/>

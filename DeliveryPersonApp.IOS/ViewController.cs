@@ -1,5 +1,6 @@
 ﻿using DeliveryApp.Model;
 using Foundation;
+using LocalAuthentication;
 using System;
 using UIKit;
 
@@ -25,21 +26,76 @@ namespace DeliveryPersonApp.IOS
 
         private async void BtnLogin_TouchUpInside(object sender, EventArgs e)
         {
+            
+            bool hasLogged = CheckLogin();
+            if (hasLogged)
+            {
+                BiometricAuth();
+            }
+            else
+            {
+                NormalLogin();
+            }
+            
+            //PerformSegue("sgeLogin", this);
+    
+        }
+
+        private void BiometricAuth()
+        {
+            NSError error;
+            var contxt=new LAContext(); 
+            if(contxt.CanEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics,out error))
+            {
+                InvokeOnMainThread(async() =>
+                {
+                   var canLogin=await contxt.EvaluatePolicyAsync(LAPolicy.DeviceOwnerAuthenticationWithBiometrics,"Login");
+                    if (canLogin.Item1)
+                    {
+                        isLogged = true;
+                        PerformSegue("sgeLogin", this);
+                    }
+                    else
+                    {
+                        NormalLogin();
+                    }
+                });
+            }
+            else
+            {
+                NormalLogin();
+            }
+        }
+
+        private async void NormalLogin()
+        {
             UIAlertController alert = null;
-            UserId= await DeliveryPerson.Login(tfEmail.Text, tfPassword.Text);
+            UserId = await DeliveryPerson.Login(tfEmail.Text, tfPassword.Text);
             if (!string.IsNullOrEmpty(UserId))
             {
+                NSUserDefaults.StandardUserDefaults.SetString(UserId, "userId");
+                NSUserDefaults.StandardUserDefaults.Synchronize();
                 isLogged = true;
-                alert = UIAlertController.Create("Success", "Welcome back", UIAlertControllerStyle.Alert);
                 PerformSegue("sgeLogin", this);
+                alert = UIAlertController.Create("Success", "Welcome back", UIAlertControllerStyle.Alert);
             }
             else
             {
                 alert = UIAlertController.Create("Wrong", "Can't login, Please check your information", UIAlertControllerStyle.Alert);
             }
-            //PerformSegue("sgeLogin", this);
             alert.AddAction(UIAlertAction.Create("ok", UIAlertActionStyle.Default, null));
             PresentViewController(alert, true, null);
+        }
+
+        private bool CheckLogin()
+        {
+            bool logged = false;
+            UserId = NSUserDefaults.StandardUserDefaults.StringForKey("userId");
+            if (!string.IsNullOrEmpty(UserId))
+            {
+                logged = true;
+            }
+            return logged;
         }
 
         public override bool ShouldPerformSegue(string segueIdentifier, NSObject sender)
