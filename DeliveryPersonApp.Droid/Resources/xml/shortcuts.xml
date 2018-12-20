@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+  <shortcut android:shortcutId="SignUpShortcut" android:enabled="true" android:shortcutShortLabel="@string/shortcut_short" 
+            android:shortcutLongLabel="@string/shortcut_long">
+    <intent android:targetClass="DeliveryPersonApp.Droid.DeliveryPersonApp.Droid.MainActivity"
+            android:targetPackage="DeliveryPersonApp.Droid.DeliveryPersonApp.Droid"
+            android:action="android.intent.action.View" 
+            android:data="SignUp"/>
+  <categories android:name="android.shortcut.conversation" />
+  </shortcut>
+  
+</shortcuts>

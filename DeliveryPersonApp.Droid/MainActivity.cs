@@ -13,7 +13,8 @@ using Android.Preferences;
 
 namespace DeliveryPersonApp.Droid
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true, Name = "DeliveryPersonApp.Droid.DeliveryPersonApp.Droid.MainActivity", Exported =true)]
+    [MetaData("android.app.shortcuts",Resource ="@xml/shortcuts")]
     public class MainActivity : AppCompatActivity
     {
         EditText etEmail, etPassword;
@@ -40,6 +41,14 @@ namespace DeliveryPersonApp.Droid
             etEmail.Text = Email;
             string Password = Intent.GetStringExtra("password");
             etPassword.Text = Password;
+            if (!string.IsNullOrEmpty(Intent?.Data?.LastPathSegment))
+            {
+                if (Intent.Data.LastPathSegment=="SignUp")
+                {
+                    var intent = new Intent(this, typeof(SignUpActivity));
+                    StartActivity(intent);
+                }
+            }
         }
 
         private async void BtnSignIn_Click(object sender, System.EventArgs e)

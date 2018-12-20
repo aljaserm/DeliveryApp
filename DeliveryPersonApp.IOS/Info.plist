@@ -46,5 +46,7 @@
     <string>Assets.xcassets/AppIcon.appiconset</string>
   <key>NSLocationWhenInUseUsageDescription</key>
   <string>Location needed for the ocating the package</string>
+  <key>NSFaceIDUsageDescription</key>
+  <string>We need your face to save your time</string>
 </dict>
 </plist>
